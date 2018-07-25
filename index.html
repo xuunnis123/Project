@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+
+<!-- Head -->
+<head>
+
+<title>Home</title>
+
+<!-- Meta-Tags -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="keywords" content="">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //Meta-Tags -->
+
+<!-- Custom-Stylesheet-Links -->
+<!-- Bootstrap-CSS --> 	<link rel="stylesheet" href="css/bootstrap.min.css"	type="text/css" media="all">
+<!-- Index-Page-CSS --> <link rel="stylesheet" href="css/style.css" 		type="text/css" media="all">
+<!-- Portfolio-CSS --> 	<link rel="stylesheet" href="css/smoothbox.css" 	type="text/css" media="all">
+<!-- //Custom-Stylesheet-Links -->
+
+<!--<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700"		type="text/css" media="all">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Neuton:300,400,700,800" 		type="text/css" media="all">
+<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900" type="text/css" media="all"> -->
+
+<!-- Font-Awesome-File-Links -->
+<!-- CSS --> <link rel="stylesheet" href="css/font-awesome.min.css" 	 type="text/css" media="all">
+<!-- TTF --> <link rel="stylesheet" href="fonts/fontawesome-webfont.ttf" type="text/css" media="all">
+<!-- //Font-Awesome-File-Links -->
+
+<!-- Supportive-JavaScript --> <script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+
+</head>
+<!-- //Head -->
+
+
+
+<!-- Body -->
+<body onload="getNextEvent();checkSit()">
+
+	<!-- Header -->
+	<div class="header-aits" id="home">
+
+		<div class="header-info-w3ls">
+
+			<!-- Navigation -->
+			<nav class="navbar container navbar-inverse navbar-default">
+
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<!-- Logo -->
+					<div class="logo">
+						<a class="navbar-brand logo-w3l button" href="index.html" ><font color="#FFF77" font-family:"AdobeFanHeitiStd-Bold">SpineReminder</font></a>
+					</div>
+					<!-- //Logo -->
+				</div>
+
+				<div id="navbar" class="navbar-collapse navbar-right collapse">
+					<ul class="nav navbar-nav navbar-right cross-effect" id="cross-effect">
+						<li>首頁</li>
+						<li><a font-family:"AdobeFanHeitiStd-Bold" id="setTime" href="setTime.html">久坐提醒設定</a></li>
+						<li><a font-family:"AdobeFanHeitiStd-Bold" id="sitError" href="sitError.html">錯誤坐姿一覽</a></li>
+						<li><a font-family:"AdobeFanHeitiStd-Bold" id="calendar" href="calendar.html">行事曆</a></li>
+					</ul>
+				</div><!-- //Navbar-Collapse -->
+
+			</nav>
+			<!-- //Navigation -->
+
+		</div>
+
+
+
+		<!-- Slider-1 -->
+		<div class="slider-w3layouts">
+			<ul class="rslides-agileits" id="slider1">
+				<li>
+					<img src="images/slide-1.jpg" alt="W3layouts Agileits">
+				</li>
+				<li>
+					<img src="images/slide-2.jpg" alt="W3layouts Agileits">
+				</li>
+				<li>
+					<img src="images/slide-3.jpg" alt="W3layouts Agileits">
+				</li>
+				<li>
+					<img src="images/slide-4.jpg" alt="W3layouts Agileits">
+				</li>
+				<li>
+					<img src="images/slide-5.jpg" alt="W3layouts Agileits">
+				</li>
+				<li>
+					<img src="images/slide-6.jpg" alt="W3layouts Agileits">
+				</li>
+
+			</ul>
+		</div>
+		<!-- //Slider-1 -->
+
+		<div class="clearfix"></div>
+
+	</div>
+	<!-- //Header -->
+
+
+
+	<!-- Countdown-timer -->
+	<div class="agilecountdown-timerwthree">
+		<div class="countdown-timer-w3laits">
+			<div class="container" id="count">
+				<button type="button" class="btn btn-success" onclick="startTime()">開始</button>
+				<!--<button onclick="startTime()">開始</button>-->
+				<button type="button" class="btn btn-danger" onclick="pauseTime()">暫停</button>
+				<!--<button onclick="pauseTime()">暫停</button>-->
+				<button type="button" class="btn btn-secondary" onclick="endTime()">結束</button>
+				<!--<button onclick="endTime()">結束</button>-->
+				<div class="alert alert-danger" role="alert">
+  					<font font-family:"AdobeFanHeitiStd-Bold.otf" size="4">接下來要做的事：</font>
+					<font font-family:"AdobeFanHeitiStd-Bold" size="4" color="#0066FF" id="nextEvent"></font>
+				</div>
+				<div class="alert alert-warning" size=5 role="alert"><font color="#FF8888" size ="5">在座時間</font> <!--</div>-->
+
+				<section class="examples">
+					<!--<div class="simply-countdown-losange" id="simply-countdown-losange"></div>-->
+					
+					<!--<div>-->
+					
+						<span style="position:relative;width:18%;display:inline-block;">
+							<span class="simply-word">hours</span>
+							<font size="12" color="#2F4F4F" id="hours_onsit"></font>
+						</span>
+						
+						<span style="position:relative;left:15%;width:18%;display:inline-block;">
+							<span class="simply-word">minutes</span>
+							<font size="12" color="#2F4F4F" id="minutes_onsit"></font>
+						</span>
+						
+						<span style="position:relative;left:30%;width:18%;display:inline-block;">
+							<span class="simply-word">seconds</span>
+							<font size="12" color="#2F4F4F" id="seconds_onsit"></font>
+						</span>
+						
+						
+					</div>
+					
+				</section>
+
+				<div class="alert alert-info" font-family:"AdobeFanHeitiStd-Bold" role="alert"><font color="#009FCC" size ="5">離座時間</font><!--</div>-->
+				
+				<section class="examples">
+					<!--<div class="simply-countdown-losange" id="simply-countdown-losange"></div>-->
+					
+					<!--<div>-->
+					
+						<span style="position:relative;width:18%;display:inline-block;">
+							<span class="simply-word">hours</span>
+							<font size="12" color="#2F4F4F" id="hours_offsit"></font>
+						</span>
+						
+						<span style="position:relative;left:15%;width:18%;display:inline-block;">
+							<span class="simply-word">minutes</span>
+							<font size="12" color="#2F4F4F" id="minutes_offsit"></font>
+						</span>
+						
+						<span style="position:relative;left:30%;width:18%;display:inline-block;">
+							<span class="simply-word">seconds</span>
+							<font size="12" color="#2F4F4F" id="seconds_offsit"></font>
+						</span>
+						
+						
+					</div>
+					
+				</section>
+
+			</div>
+		</div>
+	</div>
+	<!-- //Countdown-timer -->
+
+
+
+	<!-- TODO List -->
+	<div class="about-w3laits" id="about">
+		<div class="container">
+			<h1 color="#666666">Todo List</h1>
+			
+				<div class="input-group mb-3">
+  			<div class="input-group-prepend">
+  		  <div class="input-group-text">
+     	 <input type="checkbox" aria-label="Checkbox for following text input">
+   		 </div>
+  			</div>
+  			<input type="text" class="form-control" aria-label="Text input with checkbox">
+			</div>
+			
+
+		</div>
+	</div>
+	<!-- //TODO List -->
+
+
+	
+	
+	
+	
+	
+	<!-- Function -->
+	<script src="https://www.gstatic.com/firebasejs/5.3.0/firebase.js"></script>
+	<script>
+		var timeOnSit=0;
+		var timeOffSit=0;
+		
+		var timer=null;
+		var flagOnSit;
+		var time;
+		
+		var hours_onsit = document.getElementById("hours_onsit");
+		var minutes_onsit = document.getElementById("minutes_onsit");
+		var seconds_onsit = document.getElementById("seconds_onsit");
+			
+		var hours_offsit = document.getElementById("hours_offsit");
+		var minutes_offsit = document.getElementById("minutes_offsit");
+		var seconds_offsit = document.getElementById("seconds_offsit");
+		
+	
+	/*
+		function startTime()
+		{	
+			flagOnSit=localStorage.getItem('flagOnSit');
+			time=localStorage.getItem('time');
+			
+			if(flagOnSit=="true")
+			{
+				hours_offsit.innerHTML=0;
+				minutes_offsit.innerHTML=0;
+				seconds_offsit.innerHTML=0;
+
+				clearInterval(timer);
+				// setInterval() 方法可按照指定的周期（以毫秒计）来调用函数或计算表达式。
+				timer=setInterval(function () 
+				{
+					time++;
+					localStorage.setItem('time',time);
+					var h=parseInt(time/3600);
+					var m=parseInt(time/60%60);
+					var s=parseInt(time%60);
+					hours_onsit.innerHTML=h;
+					minutes_onsit.innerHTML=m;
+					seconds_onsit.innerHTML=s;
+				},1000);
+			}
+			else
+			{
+				hours_onsit.innerHTML=0;
+				minutes_onsit.innerHTML=0;
+				seconds_onsit.innerHTML=0;
+
+				clearInterval(timer);
+				// setInterval() 方法可按照指定的周期（以毫秒计）来调用函数或计算表达式。
+				timer=setInterval(function () 
+				{
+					time++;
+					localStorage.setItem('time',time);
+					var h=parseInt(time/3600);
+					var m=parseInt(time/60%60);
+					var s=parseInt(time%60);
+					hours_offsit.innerHTML=h;
+					minutes_offsit.innerHTML=m;
+					seconds_offsit.innerHTML=s;
+				},1000);
+			}
+		}
+		
+		function pauseTime()
+		{
+			if(flagOnSit=="true")
+				clearInterval(timer);
+		}
+		
+		function endTime()
+		{
+			clearInterval(timer);
+			flagOnSit = localStorage.getItem('flagOnSit');
+			
+			if(flagOnSit == "true")
+			{	
+				flagOnSit = false;
+			}
+			else
+			{
+				flagOnSit=true;
+			}
+				
+			localStorage.setItem('flagOnSit',flagOnSit);
+			
+			
+			time=0;
+			localStorage.setItem('time',time);
+			
+			startTime();
+		}
+		
+	*/
+		
+		function getNextEvent()
+		{
+			var timer = null;
+			var toDoEvent = null;
+			
+			clearInterval(timer);
+				// setInterval() 方法可按照指定的周期（以毫秒计）来调用函数或计算表达式。
+			timer=setInterval(function () 
+			{
+				var date=new Date();
+				var nextEvent = document.getElementById("nextEvent");
+				var currentDate = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDate();
+				var currentTimeMinutes = date.getHours()*60+date.getMinutes();
+				var eventList = localStorage.getItem(currentDate);
+				
+				var eventArray = [];
+				var event = [];
+				var minutes = [];
+				var eventMinutes;
+				var i;
+				
+				
+				if(eventList!=null && eventList!="")
+				{
+					eventArray = eventList.split("+");
+					for(i=0;i<eventArray.length;i++)
+					{
+						event = eventArray[i].split(".");
+						minutes = event[2].split(":");
+						eventMinutes = parseInt(minutes[0])*60+parseInt(minutes[1]);
+						if((eventMinutes-currentTimeMinutes)>0)
+						{
+							toDoEvent = event[2]+"&nbsp&nbsp&nbsp&nbsp&nbsp"+event[0];
+							break;
+						}
+						else
+							toDoEvent=null;
+					}
+					
+					if(toDoEvent==null)
+						nextEvent.innerHTML="目前沒有待辦事項";
+					else
+						nextEvent.innerHTML=toDoEvent;
+				}
+				else
+					nextEvent.innerHTML="目前沒有待辦事項";
+				
+			},1000);
+			
+			
+			
+		}
+		
+		
+		
+		// Initialize Firebase
+		var config = {
+			apiKey: "AIzaSyCsevat-cSK1iNpQaT8MtWVLEjApLxp51c",
+			authDomain: "aduinodb.firebaseapp.com",
+			databaseURL: "https://aduinodb.firebaseio.com",
+			projectId: "aduinodb",
+			storageBucket: "aduinodb.appspot.com",
+			messagingSenderId: "991564246365"
+		};
+		firebase.initializeApp(config);
+		var i,num;
+		var data;
+		var dataArray = [];
+		
+	  		
+		function checkSit()
+		{
+			var updates = {};
+			
+			clearInterval(timer);
+			timer=setInterval(function () 
+			{	
+				time = localStorage.getItem("time");
+				timeOnSit = localStorage.getItem("timeOnSit");
+				timeOffSit = localStorage.getItem("timeOffSit");
+				
+				num=0;
+				var database =firebase.database().ref('/project_test/');
+				database.on('value', function(snapshot) {
+				  data = snapshot.val().DATA;
+				});
+				
+				/*firebase.database().ref('/project_test/').once('value').then(function(snapshot) {
+				//抓資料
+				data = snapshot.val().DATA;
+				});*/
+				
+
+				data=data.slice(0,-1);
+				data=data.slice(1);
+				dataArray=data.split(',');
+				for(i=0;i<dataArray.length;i++)
+				{
+					dataArray[i]=dataArray[i].slice(0,-1);
+					dataArray[i]=dataArray[i].slice(1);
+					num+=parseInt(dataArray[i]);
+				}	
+				
+				if((num/dataArray.length)>3)	//坐著
+				{
+					localStorage.setItem("flagOnSit","true");
+					timeOffSit=0;
+					hours_offsit.innerHTML=0;
+					minutes_offsit.innerHTML=0;
+					seconds_offsit.innerHTML=0;
+					
+					timeOnSit++;
+					localStorage.setItem('timeOnSit',timeOnSit);
+					localStorage.setItem('timeOffSit',timeOffSit);
+					var h=parseInt(timeOnSit/3600);
+					var m=parseInt(timeOnSit/60%60);
+					var s=parseInt(timeOnSit%60);
+					hours_onsit.innerHTML=h;
+					minutes_onsit.innerHTML=m;
+					seconds_onsit.innerHTML=s;
+					
+					if(timeOnSit%time==0)
+					{
+						updates['/project_test/time'] = true;
+						firebase.database().ref().update(updates);
+					}
+					updates['/project_test/time'] = false;
+					firebase.database().ref().update(updates);
+				}
+				else//站著
+				{
+					localStorage.setItem("flagOnSit","false");
+					timeOnSit = 0;
+					hours_onsit.innerHTML=0;
+					minutes_onsit.innerHTML=0;
+					seconds_onsit.innerHTML=0;
+
+					timeOffSit++;
+					localStorage.setItem('timeOffSit',timeOffSit);
+					localStorage.setItem('timeOnSit',timeOnSit);
+					var h=parseInt(timeOffSit/3600);
+					var m=parseInt(timeOffSit/60%60);
+					var s=parseInt(timeOffSit%60);
+					hours_offsit.innerHTML=h;
+					minutes_offsit.innerHTML=m;
+					seconds_offsit.innerHTML=s;
+						
+				}
+					
+			},1000);				
+		
+		}
+	</script>
+	
+
+
+
+	<!-- Custom-JavaScript-File-Links -->
+
+		
+		<!-- Necessary-JS-File-For-Bootstrap --> <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+		<!-- Slider-JavaScript -->
+			<script src="js/responsiveslides.min.js"></script>
+			<script>
+				$(function () {
+					$("#slider1, #slider2").responsiveSlides({
+						auto: true,
+						nav: true,
+						speed: 1500,
+						namespace: "callbacks",
+						pager: true,
+					});
+				});
+			</script>
+		<!-- //Slider-JavaScript -->
+
+		<!-- Slide-To-Top JavaScript -->
+			<script type="text/javascript">
+				$(document).ready(function() {
+					var defaults = {
+						containerID: 'toTop', // fading element id
+						containerHoverID: 'toTopHover', // fading element hover id
+						scrollSpeed: 100,
+						easingType: 'linear'
+					};
+					$().UItoTop({ easingType: 'easeOutQuart' });
+				});
+			</script>
+			<a href="#" class="W3layoutsw3lts Agileitsaits" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 0;"> </span></a>
+		<!-- //Slide-To-Top JavaScript -->
+
+		<!-- Smooth-Scrolling-JavaScript -->
+			<script type="text/javascript" src="js/move-top.js"></script>
+			<script type="text/javascript" src="js/easing.js"></script>
+			<script type="text/javascript">
+				jQuery(document).ready(function($) {
+					$(".scroll").click(function(event){
+						event.preventDefault();
+						$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+					});
+				});
+			</script>
+		<!-- //Smooth-Scrolling-JavaScript -->
+
+	<!-- //Custom-JavaScript-File-Links -->
+
+
+
+</body>
+<!-- //Body -->
+
+</html>
